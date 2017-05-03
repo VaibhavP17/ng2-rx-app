@@ -1,3 +1,13 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container-full">
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">VP</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="#">Home</a></li>
+      <li><a routerLink="/items" routerLinkActive="active">Items</a></li>
+      <li><a routerLink="/widgets" routerLinkActive="active">Widgets</a></li>
+    </ul>
+  </div>
+  <router-outlet></router-outlet>
+</div>

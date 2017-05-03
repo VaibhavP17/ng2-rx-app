@@ -1,0 +1,13 @@
+/* Custom container */
+.container-full {
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Custom navbar */
+.navbar-brand ,.navbar-nav>li>a {
+  padding: 20px 30px;
+}
+.navbar-nav>.active>a {
+  opacity:.5;
+}

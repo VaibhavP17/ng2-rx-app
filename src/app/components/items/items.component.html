@@ -8,7 +8,7 @@
       <div class="col-lg-6">
         <h4>Items List</h4>
         <app-item-list
-          [items]="items" (selected)="selectItem($event)" (deleted)="deleteItem($event)"></app-item-list>
+          [items]="items | async" (selected)="selectItem($event)" (deleted)="deleteItem($event)"></app-item-list>
       </div>
 
       <div class="col-lg-6">

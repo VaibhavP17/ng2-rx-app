@@ -3,7 +3,8 @@
     <span class="list-group-item">
       <h4 class="list-group-item-heading">{{item.name}}</h4>
       <p class="list-group-item-text">{{item.description}}</p>
-      <button class="btn btn-danger pull-right delete-btn">X</button>
+      <button (click)="deleted.emit(item); $event.stopPropagation();"
+              class="btn btn-danger pull-right delete-btn">X</button>
     </span>
   </div>
 </div>

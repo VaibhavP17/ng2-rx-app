@@ -1,5 +1,9 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {Item} from "../../models/item.model";
+import {Observable} from "rxjs";
+import {ItemsService} from "../../services/items/items.service";
+import {Store} from "@ngrx/store";
+import {AppStore} from "../../models/appstore.model";
 
 @Component({
   selector: 'app-items',
@@ -8,35 +12,25 @@ import {Item} from "../../models/item.model";
 })
 export class ItemsComponent {
 
-  items: Array<Item>;
-  selectedItem: Item;
-  constructor() {
-   this.items = [
-      {
-        "id": 1,
-        "name": "Item 1",
-        "description": "This is a description"
-      },
-      {
-        "id": 2,
-        "name": "Item 2",
-        "description": "This is a description"
-      },
-      {
-        "id": 3,
-        "name": "Item 3",
-        "description": "This is a lovely item"
-      },
-      {
-        "name": "Vaibhav",
-        "description": "Awesome",
-        "id": 5
-      }
-    ]
+  items: Observable<Array<Item>>;
+  selectedItem: Observable<Item>;
+
+  constructor(private itemsService: ItemsService,
+              private store: Store<AppStore>) {
+    this.items = itemsService.items;
+    this.selectedItem = store.select('selectedItem');
+    this.selectedItem.subscribe(v => console.log(v));
+
+    itemsService.loadItems();
   }
 
-  selectItem(item : Item) {
+  selectItem(item: Item) {
+    console.log('Inside select item', item);
+    this.store.dispatch({type: 'SELECT_ITEM', payload: item});
+  }
 
+  deleteItem(item: Item) {
+    console.log('Inside deleteItem', item);
   }
 
 }

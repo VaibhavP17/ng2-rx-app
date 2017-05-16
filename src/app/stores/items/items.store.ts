@@ -1,7 +1,7 @@
 /**
  * Created by PACHAURI on 16-May-17.
  */
-export const items = (state: any[], {type, payload}) => {
+export const items = (state: any = [], {type, payload}) => {
   switch (type) {
     case 'ADD_ITEMS' :
       return payload;

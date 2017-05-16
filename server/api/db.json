@@ -6,16 +6,6 @@
       "description": "This is a description"
     },
     {
-      "id": 2,
-      "name": "Item 2",
-      "description": "This is a description"
-    },
-    {
-      "id": 3,
-      "name": "Item 3",
-      "description": "This is a lovely item"
-    },
-    {
       "name": "Vaibhav",
       "description": "Awesome 2",
       "id": 5
@@ -28,17 +18,12 @@
     {
       "id": 4,
       "name": "Isha",
-      "description": "Queen !!!"
+      "description": "cool !!!"
     },
     {
       "id": 7,
       "name": "hey jude",
       "description": "new desc"
-    },
-    {
-      "name": "hey jude",
-      "description": "desc",
-      "id": 8
     }
   ]
 }

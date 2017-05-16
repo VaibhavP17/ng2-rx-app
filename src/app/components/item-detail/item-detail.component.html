@@ -1,21 +1,27 @@
 <div>
+  <h2 class="mdl-card__title-text" *ngIf="selectedItem">Editing {{originalName}}</h2>
+  <h2 class="mdl-card__title-text" *ngIf="!selectedItem">Create New Item</h2>
   <form class="form-horizontal">
     <div class="form-group">
       <label for="name" class="control-label col-xs-2">Name</label>
       <div class="col-xs-10">
-        <input type="text" id="name" class="form-control" placeholder="Type name">
+        <input [(ngModel)]="selectedItem.name"
+               name="name"
+               #name="ngModel" type="text" id="name" class="form-control" placeholder="Type name">
       </div>
     </div>
     <div class="form-group">
       <label for="description" class="control-label col-xs-2">Description</label>
       <div class="col-xs-10">
-        <input type="text" id="description" class="form-control" placeholder="Enter description">
+        <input type="text" id="description" class="form-control" placeholder="Enter description"
+        [(ngModel)]="selectedItem.description"
+        name="description">
       </div>
     </div>
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-primary">Save</button>
-        <button type="submit" class="btn btn-danger pull-right">Reset</button>
+        <button type="submit" class="btn btn-primary" (click)="saved.emit(selectedItem)">Save</button>
+        <button type="submit" class="btn btn-danger pull-right" (click)="cancelled.emit(selectedItem)">Reset</button>
       </div>
     </div>
   </form>

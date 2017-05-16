@@ -4,6 +4,7 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {RouterModule, Routes} from '@angular/router';
 import {StoreModule} from "@ngrx/store";
+import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
 
 import {ItemsComponent} from './components/items/items.component';
 import {WidgetsComponent} from './components/widgets/widgets.component';
@@ -40,5 +41,6 @@ const appRoutes: Routes = [
   providers: [ItemsService],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule {}
+
+platformBrowserDynamic().bootstrapModule(AppModule);

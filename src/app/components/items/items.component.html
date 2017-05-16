@@ -13,7 +13,8 @@
 
       <div class="col-lg-6">
         <h4>Item Detail</h4>
-        <app-item-detail selectedItem="selectedItem"></app-item-detail>
+        <app-item-detail (saved)="saveItem($event)" (cancelled)="resetItem($event)"
+        [item]="selectedItem | async">Select an Item</app-item-detail>
       </div>
     </div>
   </div>

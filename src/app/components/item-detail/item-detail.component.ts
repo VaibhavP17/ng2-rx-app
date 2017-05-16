@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, Output, EventEmitter} from '@angular/core';
 import {Item} from "../../models/item.model";
 
 @Component({
@@ -7,5 +7,15 @@ import {Item} from "../../models/item.model";
   styleUrls: ['./item-detail.component.css']
 })
 export class ItemDetailComponent {
-  @Input() selectedItem: Item;
+  originalName: string;
+  selectedItem: Item;
+  @Output() saved = new EventEmitter();
+  @Output() cancelled = new EventEmitter();
+
+  @Input() set item(value: Item) {
+    if (value) {
+      this.originalName = value.name;
+    }
+    this.selectedItem = Object.assign({}, value);
+  };
 }

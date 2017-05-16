@@ -7,7 +7,6 @@ import {Item} from "../../models/item.model";
   styleUrls: ['./item-list.component.css']
 })
 export class ItemListComponent {
-
   @Input() items: Item[];
   @Output() selected = new EventEmitter();
   @Output() deleted = new EventEmitter();

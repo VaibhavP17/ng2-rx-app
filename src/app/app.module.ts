@@ -20,7 +20,7 @@ const appRoutes: Routes = [
   {path: 'items', component: ItemsComponent},
   {path: 'widgets', component: WidgetsComponent},
   {path: '', redirectTo: 'items', pathMatch: 'full'}
-]
+];
 
 @NgModule({
   declarations: [

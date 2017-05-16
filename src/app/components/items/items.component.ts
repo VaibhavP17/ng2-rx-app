@@ -33,6 +33,9 @@ export class ItemsComponent {
 
   deleteItem(item: Item) {
     console.log('Inside deleteItem', item);
+    this.itemsService.deleteItem(item);
+
+    this.resetItem();
   }
 
   resetItem() {

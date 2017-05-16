@@ -4,6 +4,8 @@ import {Observable} from "rxjs";
 import {ItemsService} from "../../services/items/items.service";
 import {Store} from "@ngrx/store";
 import {AppStore} from "../../models/appstore.model";
+import {ItemListComponent} from "../item-list/item-list.component";
+import {ItemDetailComponent} from "../item-detail/item-detail.component";
 
 @Component({
   selector: 'app-items',
@@ -33,4 +35,14 @@ export class ItemsComponent {
     console.log('Inside deleteItem', item);
   }
 
+  resetItem() {
+    let emptyItem: Item = {id: null, name: '', description: ''};
+    this.store.dispatch({type: 'SELECT_ITEM', payload: emptyItem});
+  }
+
+  saveItem(item: Item) {
+    this.itemsService.saveItem(item);
+
+    this.resetItem();
+  }
 }

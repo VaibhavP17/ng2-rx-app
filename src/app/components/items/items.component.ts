@@ -1,16 +1,15 @@
-import {Component} from '@angular/core';
+import {Component, ChangeDetectionStrategy} from '@angular/core';
 import {Item} from "../../models/item.model";
 import {Observable} from "rxjs";
 import {ItemsService} from "../../services/items/items.service";
 import {Store} from "@ngrx/store";
 import {AppStore} from "../../models/appstore.model";
-import {ItemListComponent} from "../item-list/item-list.component";
-import {ItemDetailComponent} from "../item-detail/item-detail.component";
 
 @Component({
   selector: 'app-items',
   templateUrl: './items.component.html',
-  styleUrls: ['./items.component.css']
+  styleUrls: ['./items.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ItemsComponent {
 

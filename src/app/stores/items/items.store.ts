@@ -16,6 +16,6 @@ export const items = (state: any = [], {type, payload}) => {
         return item.id !== payload.id;
       });
     default:
-      state;
+      return state;
   }
 }

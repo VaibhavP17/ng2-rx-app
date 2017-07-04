@@ -8,14 +8,14 @@ export const items = (state: any = [], {type, payload}) => {
     case 'CREATE_ITEM' :
       return [...state, payload];
     case 'UPDATE_ITEM' :
-      return state.map(function (item) {
+      return state.map((item) => {
         return item.id === payload.id ? Object.assign({}, item, payload) : item;
       });
     case 'DELETE_ITEM' :
-      return state.filter(function (item) {
+      return state.filter((item) => {
         return item.id !== payload.id;
       });
     default:
       return state;
   }
-}
+};
